@@ -1,6 +1,5 @@
 import random
 import time
-import saida as saida
 import entradas as en
 import bubble_sort
 
