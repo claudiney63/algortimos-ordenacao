@@ -16,7 +16,6 @@ def entradas_label():
     print('1. 100;\n2. 1.000;\n3. 5.000;\n4. 30.000;\n5. 50.000;\n6. 100.000;\n7. 150.000;\n8. 200.000.')
 
     entrada = int(input('Escolha: '))
-    saida_da_entrada = en.entrada_100
 
     if (entrada == 1):
         saida_da_entrada = [random.randrange(1, 100) for i in range(100)]
