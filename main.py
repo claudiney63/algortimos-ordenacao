@@ -1,6 +1,5 @@
 import random
 import time
-import entradas as en
 import bubble_sort
 
 
@@ -64,13 +63,13 @@ if __name__ == '__main__':
         print(f"Tempo Execucao: {fim:.5f} ms")
 
     elif (escolha == 2):  # Insertionsort
-        saida.saida_ordenada()
+        None
 
     elif (escolha == 3):  # Mergesort
-        saida.saida_ordenada()
+        None
 
     elif (escolha == 4):  # Heapsort
-        saida.saida_ordenada()
+        None
 
     elif (escolha == 5):  # Quicksort
-        saida.saida_ordenada()
+        None
