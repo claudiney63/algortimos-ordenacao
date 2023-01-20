@@ -24,19 +24,6 @@ def quick(a, start, end): # a[] = array a ser classificado, start = in�
         p = partition(a, start, end) #p está particionado no índice
         quick(a, start, p - 1)  
         quick(a, p + 1, end)
-#     return a
-  
-          
-# def printArr(a): # Função para imprimir o array  
-#    for i in range(len(a)):  
-#        print (a[i], end = " ")  
-  
-      
-#a =[100000-i for i in range(100000)]
-# print("Before sorting array elements are - ")  
-# printArr(a)
-# print(sys.getrecursionlimit())
-# quick(a, 0, len(a)-1)  
- #print("\nAfter sorting array elements are - ")  
-# printArr(a)  
+
+ 
 

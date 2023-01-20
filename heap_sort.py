@@ -22,14 +22,4 @@ def heapSort(arr):
         (arr[i], arr[0]) = (arr[0], arr[i]) 
         heapify(arr, i, 0)
         
-# arr = [12, 11, 13, 5, 6, 7, ]
 
-# crescente=[crescente for crescente in range(tamanho)]
-# decrescente=[tamanho-decrescente for decrescente in range(tamanho)]
-# # print(crescente)
-# heapSort(crescente) 
-# n = len(crescente) 
-# print('Sorted array is')  
-# print(crescente)
-# fim=time.time()-inicio
-# print(f'\nTempo de final: {fim:.5f}')
