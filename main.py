@@ -6,7 +6,8 @@ import entradas_label
 import merge_sort
 import heap_sort
 import quick_sort
-
+import sys
+sys.setrecursionlimit(200050)
 if __name__ == '__main__':
 
     escolha = algoritimo_label.algoritimo_label()
@@ -18,7 +19,7 @@ if __name__ == '__main__':
         # Chamada função para ordenar
 
         soma_tempo = 0
-        for i in range(0, 3):
+        for i in range(0, 1):
             escolha_aux = escolha_ord.copy()
             print("\nArray Ordenado: ", bubble_sort.bubble_sort(escolha_aux))
             fim = time.time() - inicio
@@ -26,7 +27,7 @@ if __name__ == '__main__':
 
         print('\nAlgoritimo Bubble Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
-        print(f"Tempo Execucao: {(soma_tempo/3):.5f} ms")
+        print(f"Tempo Execucao: {(soma_tempo):.5f} s")
 
     elif (escolha == 2):  # Insertionsort
         escolha_ord = entradas_label.entradas_label()
@@ -34,7 +35,7 @@ if __name__ == '__main__':
         print("Array NAO ordenado: ", escolha_ord)
         # Chamada função para ordenar
         soma_tempo = 0
-        for i in range(0, 3):
+        for i in range(0, 1):
             escolha_aux = escolha_ord.copy()
             print("\nArray Ordenado: ", insertion_sort.insertion_sort(escolha_aux))
 
@@ -43,7 +44,7 @@ if __name__ == '__main__':
 
         print('\nAlgoritimo Insertion Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
-        print(f"Tempo Execucao: {(soma_tempo/3):.5f} ms")
+        print(f"Tempo Execucao: {(soma_tempo):.5f} s")
 
     elif (escolha == 3):  # Mergesort
         escolha_ord = entradas_label.entradas_label()
@@ -52,7 +53,7 @@ if __name__ == '__main__':
         # Chamada função para ordenar
         soma_tempo = 0
         
-        for i in range(0, 3):
+        for i in range(0, 1):
             
             escolha_aux = escolha_ord.copy()
             merge_sort.merge_sort(escolha_aux, 0, len(escolha_aux) - 1)
@@ -64,7 +65,7 @@ if __name__ == '__main__':
 
         print('\nAlgoritimo Merge Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
-        print(f"Tempo Execucao: {(soma_tempo/3):.5f} ms")
+        print(f"Tempo Execucao: {(soma_tempo):.5f} s")
 
     elif (escolha == 4):  # Heapsort
         escolha_ord = entradas_label.entradas_label()
@@ -72,16 +73,16 @@ if __name__ == '__main__':
         print("Array NAO ordenado: ", escolha_ord)
         # Chamada função para ordenar
         soma_tempo = 0
-        for i in range(0, 3):
+        for i in range(0, 1):
             escolha_aux = escolha_ord.copy()
-            print("\nArray Ordenado: ", heap_sort.heapsort(escolha_aux))
+            print("\nArray Ordenado: ", heap_sort.heapSort(escolha_aux))
 
             fim = time.time() - inicio
             soma_tempo += fim
 
         print('\nAlgoritimo Heap Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
-        print(f"Tempo Execucao: {(soma_tempo/3):.5f} ms")
+        print(f"Tempo Execucao: {(soma_tempo):.5f} s")
 
     elif (escolha == 5):  # Quicksort
         escolha_ord = entradas_label.entradas_label()
@@ -90,7 +91,7 @@ if __name__ == '__main__':
         # Chamada função para ordenar
         soma_tempo = 0
         
-        for i in range(0, 3):
+        for i in range(0, 1):
             
             escolha_aux = escolha_ord.copy()
             quick_sort.quick(escolha_aux, 0, len(escolha_aux) - 1)
@@ -102,4 +103,4 @@ if __name__ == '__main__':
 
         print('\nAlgoritimo Quick Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
-        print(f"Tempo Execucao: {(soma_tempo/3):.5f} ms")
+        print(f"Tempo Execucao: {(soma_tempo):.5f} s")
