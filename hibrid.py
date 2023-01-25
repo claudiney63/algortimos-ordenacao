@@ -18,7 +18,7 @@ def merge(list1, left_index, right_index, middle):
 
     #  Criando subpartes de uma lista
     left_sublist = list1[left_index:middle + 1]
-    right_sublist = list1[middle+1:right_index+1]
+    right_sublist = list1[middle:right_index+1]
 
     #  Valores iniciais para variáveis que usamos para manter
     #  faixa de onde estamos em cada list1
@@ -57,6 +57,8 @@ def merge(list1, left_index, right_index, middle):
         list1[j + 1] = value
 
 lista1 = [100-i for i in range(100)]
+
+print(lista1)
 
 hibrid_merge_insertion_sort(lista1, 0, len(lista1))
 
