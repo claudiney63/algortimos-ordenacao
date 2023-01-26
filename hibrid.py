@@ -9,12 +9,12 @@ def hibrid_merge_insertion_sort(list1, left_index, right_index):
     middle = (left_index + right_index)//2
     hibrid_merge_insertion_sort(list1, left_index, middle)
     hibrid_merge_insertion_sort(list1, middle + 1, right_index)
-    merge(list1, left_index, right_index, middle)
+    hibrid_merge(list1, left_index, right_index, middle)
 
 #  Definindo uma função para mesclar a lista
 
 
-def merge(list1, left_index, right_index, middle):
+def hibrid_merge(list1, left_index, right_index, middle):
 
     #  Criando subpartes de uma lista
     left_sublist = list1[left_index:middle + 1]
@@ -56,10 +56,10 @@ def merge(list1, left_index, right_index, middle):
             j -= 1
         list1[j + 1] = value
 
-lista1 = [100-i for i in range(100)]
+# lista1 = [100-i for i in range(100)]
 
-print(lista1)
+# print(lista1)
 
-hibrid_merge_insertion_sort(lista1, 0, len(lista1))
+# hibrid_merge_insertion_sort(lista1, 0, len(lista1))
 
-print(lista1)
+# print(lista1)

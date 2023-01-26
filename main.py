@@ -6,6 +6,7 @@ import entradas_label
 import merge_sort
 import heap_sort
 import quick_sort
+import hibrid
 import sys
 sys.setrecursionlimit(200050)
 if __name__ == '__main__':
@@ -101,6 +102,26 @@ if __name__ == '__main__':
             fim = time.time() - inicio
             soma_tempo += fim
 
-        print('\nAlgoritimo Quick Sort:')
+            print('\nAlgoritimo Quick Sort:')
+            print(f'Entradas: N = {len(escolha_aux)}')
+            print(f"Tempo Execucao: {(soma_tempo):.5f} s")
+    elif (escolha == 6): #Hybrid Merge + Insertion
+        escolha_ord = entradas_label.entradas_label()
+        inicio = time.time()
+        print("Array NAO ordenado: ", escolha_ord)
+        # Chamada função para ordenar
+        soma_tempo = 0
+        
+        for i in range(0, 1):
+            
+            escolha_aux = escolha_ord.copy()
+            hibrid.hibrid_merge_insertion_sort(escolha_aux, 0, len(escolha_aux))
+            
+            print("\nArray Ordenado: ", escolha_aux)
+
+            fim = time.time() - inicio
+            soma_tempo += fim
+
+        print('\nAlgoritimo Hybrid Merge + Insertion Sort:')
         print(f'Entradas: N = {len(escolha_aux)}')
         print(f"Tempo Execucao: {(soma_tempo):.5f} s")
