@@ -75,9 +75,9 @@ def vivoSort(arr):
     # sendo essa a quantidade de elementos desse subconjunto
 
     #Ordenando os subarrays individuais de tamanho minimo
-    # for inicio in range(0, n, minRun):
-    #     fim = min(inicio + minRun - 1, n - 1) 
-    quick(arr, 0, n - 1)
+    for inicio in range(0, n, minRun):
+        fim = min(inicio + minRun - 1, n - 1) 
+        quick(arr, 0, n - 1)
 
     # Começando a mesclagem a partir do tamanho mínimo do subarray
     tamanho = minRun
