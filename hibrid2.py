@@ -71,13 +71,13 @@ def merge(list1, left_index, right_index, middle):
 
 def vivoSort(arr):
     n = len(arr)
-    minRun = 32 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
+    minRun = 65 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
     # sendo essa a quantidade de elementos desse subconjunto
 
     #Ordenando os subarrays individuais de tamanho minimo
-    # for inicio in range(0, n, minRun):
-    #     fim = min(inicio + minRun - 1, n - 1) 
-    quick(arr, 0, n - 1)
+    for inicio in range(0, n, minRun):
+        fim = min(inicio + minRun - 1, n - 1)
+        quick(arr, inicio, fim)
 
     # Começando a mesclagem a partir do tamanho mínimo do subarray
     tamanho = minRun
@@ -94,7 +94,7 @@ def vivoSort(arr):
             direita = min((esquerda + 2 * tamanho - 1), (n - 1))
 
             # Mesclando as sublistas arr[esquerda..meio] e arr[meio+1..direita]
-            merge(arr, esquerda, meio, direita)
+            merge(arr, esquerda, direita, meio)
 
         tamanho = 2 * tamanho
     return arr
