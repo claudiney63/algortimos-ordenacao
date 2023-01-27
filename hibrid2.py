@@ -71,7 +71,8 @@ def merge(list1, left_index, right_index, middle):
 
 def vivoSort(arr):
     n = len(arr)
-    minRun = 32 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
+    minRun = 65 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
+    # sendo essa a quantidade de elementos desse subconjunto
 
     #Ordenando os subarrays individuais de tamanho minimo
     for inicio in range(0, n, minRun):
@@ -98,7 +99,7 @@ def vivoSort(arr):
         tamanho = 2 * tamanho
     return arr
 
-# araay = [90, 45, 34, 23, 12, 78, 89, 90, 54, 32]
+# araay = [i for i in range(200000)]
 
 # vivoSort(araay)
 
