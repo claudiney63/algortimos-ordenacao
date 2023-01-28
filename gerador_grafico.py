@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# ORDENADO
+# RANDOM
 entrada = [100, 250, 500, 1000, 5000, 30000, 50000, 100000, 150000, 200000]
 
 # plt.figure(figsize=(8, 6))
@@ -96,5 +96,17 @@ entrada = [100, 250, 500, 1000, 5000, 30000, 50000, 100000, 150000, 200000]
 # plt.plot(entrada, [1737,	4035,	11137,	24935,	173221,	1157663,
 #          1917201,	4108927,	6389987,	8571693], label="Quick Sort")
 # plt.title('COMPARAÇÕES (RANDOM)')
+# plt.legend(ncol=2)
+# plt.show()
+
+
+# RANDOM HYBRID
+
+# plt.figure(figsize=(8, 6))
+# plt.xlabel("Entradas (n)")
+# plt.ylabel("Tempo (s)")
+# plt.plot(entrada, [0.03200,	0.05663,	0.11252,	0.01692,	0.38311,	2.88603,
+#          5.06278,	10.53470,	16.79818,	23.01261], label='HYBRID MERGE + QUICK')
+# plt.title('Inverso')
 # plt.legend(ncol=2)
 # plt.show()
