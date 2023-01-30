@@ -6,7 +6,6 @@ import entradas_label
 import merge_sort
 import heap_sort
 import quick_sort
-import hibrid
 import hibrid2
 import sys
 sys.setrecursionlimit(200050)
