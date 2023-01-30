@@ -1,15 +1,19 @@
-# função para dividir as listas nas duas sublistas 
-def merge_sort(list1, left_index, right_index):  
-    if left_index >= right_index:  
-        return  
+# função para dividir as listas nas duas sublistas
+comp=0
+def merge_sort(list1, left_index, right_index):
+    global comp
+    comp+=1
+    if left_index >= right_index:
+        return
   
     middle = (left_index + right_index)//2  
     merge_sort(list1, left_index, middle)  
     merge_sort(list1, middle + 1, right_index)  
     merge(list1, left_index, right_index, middle)  
-  
+    return comp
 # Definindo uma função para mesclar a lista
-def merge(list1, left_index, right_index, middle):  
+def merge(list1, left_index, right_index, middle):
+    global comp
   
     # Criando subpartes de uma lista 
     left_sublist = list1[left_index:middle + 1]  
@@ -22,10 +26,12 @@ def merge(list1, left_index, right_index, middle):
     sorted_index = left_index  
   
     # atravessar ambas as cópias até  excedermos um elemento  
-    while left_sublist_index < len(left_sublist) and right_sublist_index < len(right_sublist):  
+    while left_sublist_index < len(left_sublist) and right_sublist_index < len(right_sublist):
+        comp+=2
   
         # atravessar ambas as cópias até  excedermos um elemento
-        # # parte e em seguida avançar na sublista_esquerda (aumentando o ponteiro)  
+        # # parte e em seguida avançar na sublista_esquerda (aumentando o ponteiro)
+        comp+=1
         if left_sublist[left_sublist_index] <= right_sublist[right_sublist_index]:  
             list1[sorted_index] = left_sublist[left_sublist_index]  
             left_sublist_index = left_sublist_index + 1  
@@ -38,12 +44,14 @@ def merge(list1, left_index, right_index, middle):
         sorted_index = sorted_index + 1  
        
     # vamos percorrer os elementos restantes e adicioná-los   
-    while left_sublist_index < len(left_sublist):  
+    while left_sublist_index < len(left_sublist):
+        comp+=1
         list1[sorted_index] = left_sublist[left_sublist_index]  
         left_sublist_index = left_sublist_index + 1  
         sorted_index = sorted_index + 1  
   
-    while right_sublist_index < len(right_sublist):  
+    while right_sublist_index < len(right_sublist):
+        comp+=1
         list1[sorted_index] = right_sublist[right_sublist_index]  
         right_sublist_index = right_sublist_index + 1  
-        sorted_index = sorted_index + 1  
+        sorted_index = sorted_index + 1
