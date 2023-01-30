@@ -1,8 +1,10 @@
+cont=0
 def partition (a, inicio, fim):  
+    global cont
     i = (inicio - 1)
     pivot = a[fim] # elemento pivot  
-      
     for j in range(inicio, fim):  
+        cont+=2
         # Se elemento atual for menor que ou igual ao pivot 
         if (a[j] <= pivot):  
             i = i + 1  
@@ -14,13 +16,17 @@ def partition (a, inicio, fim):
       
 # função para implementar classificação rápida 
 def quick(a, inicio, fim): # a[] = array a ser classificado, início do índice, finalização do índice
+    global cont
+    cont+=1
     if (inicio < fim):
         p = partition(a, inicio, fim) #p está particionado no índice
         quick(a, inicio, p - 1)  
         quick(a, p + 1, fim)
 
 # função para dividir as listas nas duas sublistas 
-def merge_sort(list1, left_index, right_index):  
+def merge_sort(list1, left_index, right_index):
+    global cont
+    cont+=1
     if left_index >= right_index:  
         return  
   
@@ -30,8 +36,8 @@ def merge_sort(list1, left_index, right_index):
     merge(list1, left_index, right_index, middle)  
   
 # Definindo uma função para mesclar a lista
-def merge(list1, left_index, right_index, middle):  
-  
+def merge(list1, left_index, right_index, middle):
+    global cont  
     # Criando subpartes de uma lista 
     left_sublist = list1[left_index:middle + 1]  
     right_sublist = list1[middle+1:right_index+1]  
@@ -43,8 +49,8 @@ def merge(list1, left_index, right_index, middle):
     sorted_index = left_index  
   
     # atravessar ambas as cópias até  excedermos um elemento  
-    while left_sublist_index < len(left_sublist) and right_sublist_index < len(right_sublist):  
-  
+    while left_sublist_index < len(left_sublist) and right_sublist_index < len(right_sublist):
+        cont+=2
         # atravessar ambas as cópias até  excedermos um elemento
         # # parte e em seguida avançar na sublista_esquerda (aumentando o ponteiro)  
         if left_sublist[left_sublist_index] <= right_sublist[right_sublist_index]:  
@@ -59,35 +65,41 @@ def merge(list1, left_index, right_index, middle):
         sorted_index = sorted_index + 1  
        
     # vamos percorrer os elementos restantes e adicioná-los   
-    while left_sublist_index < len(left_sublist):  
+    while left_sublist_index < len(left_sublist):
+        cont+1
         list1[sorted_index] = left_sublist[left_sublist_index]  
         left_sublist_index = left_sublist_index + 1  
         sorted_index = sorted_index + 1  
-  
-    while right_sublist_index < len(right_sublist):  
+
+    while right_sublist_index < len(right_sublist):
+        cont+=1
         list1[sorted_index] = right_sublist[right_sublist_index]  
         right_sublist_index = right_sublist_index + 1  
         sorted_index = sorted_index + 1  
 
 def vivoSort(arr):
+    global cont
     n = len(arr)
-    minRun = 32 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
+    minRun = 65 #Tamanho mínimo do subarray, segundo recomendações de pesquisas sobre tim sort
     # sendo essa a quantidade de elementos desse subconjunto
 
     #Ordenando os subarrays individuais de tamanho minimo
     for inicio in range(0, n, minRun):
-        fim = min(inicio + minRun - 1, n - 1) 
-        quick(arr, 0, n - 1)
+        cont+=1
+        fim = min(inicio + minRun - 1, n - 1)
+        quick(arr, inicio, fim)
 
     # Começando a mesclagem a partir do tamanho mínimo do subarray
     tamanho = minRun
     while tamanho < n:
+        cont+=1
 
         # escolhendo o ponto de partida do array à esquerda
         # as sub-listas que serão mescladas são arr[esuerda..esquerda+tamanho-1]
         # e arr[esquerda+tamanho, esquerda+2*tamanho-1]
         # depois de mesclar, fazemos o salto em 2*tamanho
         for esquerda in range(0, n, 2 * tamanho):
+            cont+=1
 
             # Encontrando o ponto de divisão entre as sub-listas
             meio = min(n - 1, esquerda + tamanho - 1)
@@ -97,6 +109,8 @@ def vivoSort(arr):
             merge(arr, esquerda, direita, meio)
 
         tamanho = 2 * tamanho
+    print("numero de comparações=")
+    print(cont)
     return arr
 
 # araay = [i for i in range(200000)]
